@@ -9,6 +9,7 @@ import awsConfig from "./aws-exports";
 
 Amplify.configure(awsConfig);
 
+
 function App() {
   return (
     <Authenticator>
