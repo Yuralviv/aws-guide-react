@@ -1,7 +1,7 @@
 import React from "react";
 import { Amplify } from "aws-amplify";
 
-import { Authenticator } from "@aws-amplify/ui-react";
+import { Authenticator, Button } from "@aws-amplify/ui-react";
 
 import "@aws-amplify/ui-react/styles.css";
 
@@ -9,14 +9,19 @@ import awsConfig from "./aws-exports";
 
 Amplify.configure(awsConfig);
 
-
 function App() {
   return (
     <Authenticator>
       {({ signOut, user }) => (
-        <main>
+        <main style={{ textAlign: "center" }}>
           <h1>Hello {user.username}</h1>
-          <button onClick={signOut}>Sign out</button>
+          <Button variation="primary" onClick={signOut}>
+            Sign out
+          </Button>
+
+          <ul>
+            <li></li>
+          </ul>
         </main>
       )}
     </Authenticator>
