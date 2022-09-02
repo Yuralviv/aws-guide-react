@@ -1,15 +1,30 @@
-import React from "react";
-import { Amplify } from "aws-amplify";
+import React, { useEffect } from "react";
+import { Amplify, API, graphqlOperation } from "aws-amplify";
 
 import { Authenticator, Button } from "@aws-amplify/ui-react";
 
 import "@aws-amplify/ui-react/styles.css";
 
+import { listLists } from "./graphql/queries";
+
 import awsConfig from "./aws-exports";
+import { useState } from "react";
 
 Amplify.configure(awsConfig);
 
+// test user: teroxil470@ulforex.com
+
 function App() {
+  const [list, setList] = useState([]);
+
+  const fetchList = async () => {
+    const result = await API.graphql(graphqlOperation(listLists));
+    console.log(result);
+  };
+
+  useEffect(() => {
+    fetchList();
+  }, []);
   return (
     <Authenticator>
       {({ signOut, user }) => (

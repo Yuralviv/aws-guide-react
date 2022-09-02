@@ -8,7 +8,6 @@ export const onCreateList = /* GraphQL */ `
       title
       description
       imageKey
-      slug
       listItems {
         items {
           id
@@ -36,7 +35,6 @@ export const onUpdateList = /* GraphQL */ `
       title
       description
       imageKey
-      slug
       listItems {
         items {
           id
@@ -64,7 +62,6 @@ export const onDeleteList = /* GraphQL */ `
       title
       description
       imageKey
-      slug
       listItems {
         items {
           id
@@ -97,7 +94,6 @@ export const onCreateListItem = /* GraphQL */ `
         title
         description
         imageKey
-        slug
         listItems {
           nextToken
         }
@@ -112,7 +108,6 @@ export const onCreateListItem = /* GraphQL */ `
           createdAt
           updatedAt
           listItemActionsId
-          actionListItemId
           owner
         }
         nextToken
@@ -137,7 +132,6 @@ export const onUpdateListItem = /* GraphQL */ `
         title
         description
         imageKey
-        slug
         listItems {
           nextToken
         }
@@ -152,7 +146,6 @@ export const onUpdateListItem = /* GraphQL */ `
           createdAt
           updatedAt
           listItemActionsId
-          actionListItemId
           owner
         }
         nextToken
@@ -177,7 +170,6 @@ export const onDeleteListItem = /* GraphQL */ `
         title
         description
         imageKey
-        slug
         listItems {
           nextToken
         }
@@ -192,7 +184,6 @@ export const onDeleteListItem = /* GraphQL */ `
           createdAt
           updatedAt
           listItemActionsId
-          actionListItemId
           owner
         }
         nextToken
@@ -210,34 +201,9 @@ export const onCreateAction = /* GraphQL */ `
     onCreateAction(owner: $owner) {
       id
       action
-      listItem {
-        id
-        title
-        quantity
-        done
-        list {
-          id
-          title
-          description
-          imageKey
-          slug
-          createdAt
-          updatedAt
-          owner
-        }
-        actions {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        listListItemsId
-        listItemListId
-        owner
-      }
       createdAt
       updatedAt
       listItemActionsId
-      actionListItemId
       owner
     }
   }
@@ -247,34 +213,9 @@ export const onUpdateAction = /* GraphQL */ `
     onUpdateAction(owner: $owner) {
       id
       action
-      listItem {
-        id
-        title
-        quantity
-        done
-        list {
-          id
-          title
-          description
-          imageKey
-          slug
-          createdAt
-          updatedAt
-          owner
-        }
-        actions {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        listListItemsId
-        listItemListId
-        owner
-      }
       createdAt
       updatedAt
       listItemActionsId
-      actionListItemId
       owner
     }
   }
@@ -284,34 +225,9 @@ export const onDeleteAction = /* GraphQL */ `
     onDeleteAction(owner: $owner) {
       id
       action
-      listItem {
-        id
-        title
-        quantity
-        done
-        list {
-          id
-          title
-          description
-          imageKey
-          slug
-          createdAt
-          updatedAt
-          owner
-        }
-        actions {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        listListItemsId
-        listItemListId
-        owner
-      }
       createdAt
       updatedAt
       listItemActionsId
-      actionListItemId
       owner
     }
   }

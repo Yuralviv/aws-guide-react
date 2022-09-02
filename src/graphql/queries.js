@@ -23,7 +23,6 @@ export const searchLists = /* GraphQL */ `
         title
         description
         imageKey
-        slug
         listItems {
           nextToken
         }
@@ -57,7 +56,6 @@ export const getList = /* GraphQL */ `
       title
       description
       imageKey
-      slug
       listItems {
         items {
           id
@@ -90,7 +88,6 @@ export const listLists = /* GraphQL */ `
         title
         description
         imageKey
-        slug
         listItems {
           nextToken
         }
@@ -114,7 +111,6 @@ export const getListItem = /* GraphQL */ `
         title
         description
         imageKey
-        slug
         listItems {
           nextToken
         }
@@ -129,7 +125,6 @@ export const getListItem = /* GraphQL */ `
           createdAt
           updatedAt
           listItemActionsId
-          actionListItemId
           owner
         }
         nextToken
@@ -159,7 +154,6 @@ export const listListItems = /* GraphQL */ `
           title
           description
           imageKey
-          slug
           createdAt
           updatedAt
           owner
@@ -182,34 +176,9 @@ export const getAction = /* GraphQL */ `
     getAction(id: $id) {
       id
       action
-      listItem {
-        id
-        title
-        quantity
-        done
-        list {
-          id
-          title
-          description
-          imageKey
-          slug
-          createdAt
-          updatedAt
-          owner
-        }
-        actions {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        listListItemsId
-        listItemListId
-        owner
-      }
       createdAt
       updatedAt
       listItemActionsId
-      actionListItemId
       owner
     }
   }
@@ -224,21 +193,9 @@ export const listActions = /* GraphQL */ `
       items {
         id
         action
-        listItem {
-          id
-          title
-          quantity
-          done
-          createdAt
-          updatedAt
-          listListItemsId
-          listItemListId
-          owner
-        }
         createdAt
         updatedAt
         listItemActionsId
-        actionListItemId
         owner
       }
       nextToken
